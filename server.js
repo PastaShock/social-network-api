@@ -1,4 +1,6 @@
 const express = require('express');
+const db = require('./config/connection');
+const routes = require('./routes');
 
 // point to the mongo connection
 const connection = require('./config/connection');
