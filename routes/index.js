@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const notFound = require('../404')
 // import the api routes from the subfolder
 const apiRoutes = require('./api');
 
@@ -8,7 +7,7 @@ router.use('/api', apiRoutes);
 
 // error route
 router.use((req, res) => {
-    res.status(404).send(`${notFound}`);
+    res.status(404).send(`not found`);
   });
 
 // Module exports router
