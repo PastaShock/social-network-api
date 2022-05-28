@@ -98,7 +98,7 @@ const getRandomEmail = () => {
 };
 
 const getRandomQuote = () => {
-    return getRandomArrItem(quotes.quote);
+    return getRandomArrItem(quotes);
 };
 
 const createRandomUser = () => {
