@@ -32,7 +32,7 @@ module.exports = {
         User.create(req.body)
             .then((dbUserData) => {
                 res.json(dbUserData);
-                res.status(200).json({message: 'success!'}, dbUserData)
+                res.status(200).json({message: 'success!'})
             })
             .catch((err) => res.status(500).json(err));
     },
