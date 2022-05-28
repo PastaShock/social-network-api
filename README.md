@@ -28,14 +28,15 @@ I built this project to display a working knowledge of how to integrate node, mo
 ![screenshot of the app](assets/screenshot.gif)
 
 ### What makes this app standout?
-This project doesn't stand out tbh. bootcamp week 18 assignments for the social network api probably are all pretty much the same. I do have a rseed generator though.
+This project doesn't stand out tbh. bootcamp week 18 assignments for the social network api probably are all pretty much the same. I do have a seed generator, which generates a object with a username and email and another object for a quote and username.
 
 ## Installation
 ```npm i```
 
 ## Usage
 
-npm run seed\nnpm start
+`npm run seed`
+`npm start`
 
 ## Contribution
 email me.
