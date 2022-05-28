@@ -4,7 +4,8 @@
     "mongoose": "^6.3.4"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "nodemon --watch",
+    "seed": "node utils/seed"
   },
   "name": "social-network-api",
   "version": "1.0.0",

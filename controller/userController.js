@@ -6,7 +6,10 @@ module.exports = {
             .populate({ path: 'thoughts', select: '-__v' })
             .populate({ path: 'friends', select: '-__v' })
             .then((users) => res.json(users))
-            .catch((err) => res.status(500).json(err));
+            .catch((err) => {
+                console.log(err);
+                res.status(500).json(err)
+            })
     },
     getSingleUser(req, res) {
         User.findOne({ _id: req.params.id })
@@ -18,12 +21,19 @@ module.exports = {
                     ? res.status(404).json({ message: 'no user with that id' })
                     : res.json(user)
             )
-            .catch((err) => res.status(500).json(err));
+            .catch((err) => {
+                console.log(err);
+                res.status(500).json(err);
+            });
     },
     // create a new user
     createUser(req, res) {
+        console.log(req.body)
         User.create(req.body)
-            .then((dbUserData) => res.json(dbUserData))
+            .then((dbUserData) => {
+                res.json(dbUserData);
+                res.status(200).json({message: 'success!'}, dbUserData)
+            })
             .catch((err) => res.status(500).json(err));
     },
     // update user

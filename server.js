@@ -1,9 +1,10 @@
 const express = require('express');
 const db = require('./config/connection');
 const routes = require('./routes');
+const { createRandomUser } = require('./utils/data');
 
 // point to the mongo connection
-const connection = require('./config/connection');
+const connection = db;
 
 // initialize the express router
 const app = express();
@@ -14,10 +15,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
 
-app.use(require('./routes'));
+app.use(routes);
 
-connection();
+// connection();
 
-app.listen(PORT, () => {
-    console.log(` Connected on localhost:${PORT} `)
-});
+db.once('open', () => {
+    app.listen(PORT, () => {
+        console.log(` Connected on localhost:${PORT} `)
+    });
+})
