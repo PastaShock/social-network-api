@@ -8,7 +8,7 @@ const Reaction = require('./reaction');
 //   * Must be between 1 and 280 characters
 const thoughtSchema = new Schema(
     {
-        thoughText: {
+        thoughtText: {
             type: String,
             require: true,
             minLength: 1,
@@ -25,7 +25,7 @@ const thoughtSchema = new Schema(
 // * `username` (The user that created this thought)
 //   * String
 //   * Required
-    userName: {
+    username: {
         type: String,
         required: true,
     },
@@ -49,7 +49,8 @@ const thoughtSchema = new Schema(
 thoughtSchema
 .virtual('getReactions')
 .get( () => {
-    return this.reactions.length;
+    // return this.reactions.length
+    return 6
 });
 
 const Thought = model('thought', thoughtSchema);
