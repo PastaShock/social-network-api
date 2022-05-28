@@ -5,7 +5,7 @@
     "uuid": "^8.3.2"
   },
   "scripts": {
-    "start": "nodemon --watch",
+    "start": "node server.js",
     "seed": "node utils/seed"
   },
   "name": "social-network-api",
