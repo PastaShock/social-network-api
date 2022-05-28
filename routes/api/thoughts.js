@@ -23,7 +23,8 @@ router.route('/:id')
     .get(getSingleThought)
     .put(updateThought)
     .delete(deleteThought)
-    .post(addThoughtReaction)
+
+router.route('/:id/reactions').post(addThoughtReaction);
 
 router.route('/:id/:reactionId').delete(removeThoughtReaction);
 

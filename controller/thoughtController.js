@@ -77,6 +77,7 @@ module.exports = {
     },
     // Add a thought reaction
     addThoughtReaction(req, res) {
+        console.log(`req.body: ${JSON.stringify(req.body)}`)
         Thought.findOneAndUpdate(
             { _id: req.params.id },
             { $addToSet: { reactions: req.body } },
