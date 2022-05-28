@@ -113,7 +113,7 @@ const createRandomUser = () => {
 createRandomThought = () => {
     return {
         thoughtText: getRandomQuote(),
-        username: getRandomName
+        username: getRandomName()
     }
 }
 

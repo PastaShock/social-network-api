@@ -44,7 +44,7 @@ userSchema
 // Create a virtual called `friendCount` that retrieves the length of the user's `friends` array field on query.
 .virtual('friendCount')
 .get( () => {
-    // return `${this.friends.length}`
+    // return this.friends.length || 0;
     return `5`
 })
 

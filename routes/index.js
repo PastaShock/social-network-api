@@ -7,7 +7,7 @@ router.use('/api', apiRoutes);
 
 // error route
 router.use((req, res) => {
-    res.status(404).send(`not found`);
+    res.status(404).send(`bad top level route`);
   });
 
 // Module exports router
