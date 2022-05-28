@@ -17,7 +17,7 @@ module.exports = {
     },
     // create a new thought
     createThought(req, res) {
-        console.log(req.body)
+        console.log(JSON.stringify(req.body))
         Thought.create(req.body)
             .then((thought) => {
                 console.log(`\nuserid: ${req.params.id}\nthoughtid: ${thought._id}`);
