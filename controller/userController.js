@@ -28,11 +28,10 @@ module.exports = {
     },
     // create a new user
     createUser(req, res) {
-        console.log(req.body)
+        // console.log(req.body)
         User.create(req.body)
             .then((dbUserData) => {
-                res.json(dbUserData);
-                res.status(200).json({message: 'success!'})
+                res.status(200).json(dbUserData)
             })
             .catch((err) => res.status(500).json(err));
     },

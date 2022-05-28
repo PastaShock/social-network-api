@@ -1,3 +1,4 @@
+const { v4: uuid } = require('uuid')
 const names = [
     'Aaran',
     'Aaren',
@@ -98,6 +99,7 @@ const names = [
   const createRandomUser = () => {
       let name = getRandomName();
       return {
+        //   _id: uuid(),
           username: name,
           email: `${name.replace(/\s/g, '.')}@${getRandomEmail()}.com`,
       }

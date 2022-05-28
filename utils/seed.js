@@ -12,7 +12,7 @@ connection.once('open', async () => {
 
     for (let i = 0; i < 30; i++) {
         let randUser = createRandomUser();
-        users.push({ randUser });
+        users.push({ username: randUser.username, email: randUser.email });
         console.log(`added user: ${JSON.stringify(randUser)}`);
     }
 
